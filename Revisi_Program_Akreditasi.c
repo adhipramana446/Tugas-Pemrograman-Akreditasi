@@ -1,9 +1,14 @@
 #include <stdio.h>
+#include <string.h>
 
 int main (){
     float nilai1, nilai2, nilai3, nilai4, nilai5, nilai6, nilai7;
 
     printf("=== Sistem Penilaian Akreditasi Program Studi Magister/Magister Terapan ===\n");
+
+    // Khalis 51
+    // Fira 69
+    // Faiq 54
 
     // fungsi kecukupan jumlah DTPS
     int ndtps;
@@ -34,12 +39,12 @@ int main (){
     printf("Masukkan jumlah dosen tetap yang memiliki jabatan Lektor Kepala: ");
     scanf("%d", &ndlk);
 
-    pgblk = ((float)(ndgb + ndlk) / ndtps) * 100;
+    pgblk = ((ndgb + ndlk) / ndtps) * 100;
 
     if (pgblk >= 70) {
         nilai2 = 4;
     } else {
-        nilai2 = 2 + ((20 * pgblk) / 7); 
+        nilai2 = (float) 2 + ((20 * pgblk) / 7); 
         if (nilai2 < 2) {
             nilai2 = 2;
         }
@@ -193,6 +198,22 @@ int main (){
     }
     printf("Nilai publikasi ilmiah = %.2f\n", nilai7);
 
+    // fungsi akumulasi skor akhir dan grade
+    float skor_akhir;
+    char grade[30];
+    
+    skor_akhir = (nilai1 + nilai2 + nilai3 + nilai4 + nilai5 + nilai6 + nilai7) / 7;
+
+    if (skor_akhir >= 3.61){
+        strcpy(grade, "Unggul");
+    } else if (skor_akhir >= 3.01 && skor_akhir < 3.61){
+        strcpy(grade, "Baik Sekali");
+    } else if (skor_akhir >= 2.00 && skor_akhir < 3.01){
+        strcpy(grade, "Baik");
+    } else {
+        strcpy(grade, "Tidak Terakreditasi");
+    }
+
    // rangkuman output
     printf("\n\n== BERIKUT RANGKUMAN PENILAIAN AKREDITASI ==\n");
     printf("\nNilai kecukupan jumlah DTPS = %.2f\n", nilai1);
@@ -202,6 +223,7 @@ int main (){
     printf("Nilai kepuasan pengguna = %.2f\n", nilai5);
     printf("Nilai publikasi ilmiah magister = %.2f\n", nilai6);
     printf("Nilai publikasi ilmiah magister terapan = %.2f\n", nilai7);
+    printf("\nSkor Akhir = %.2f (%s)\n", skor_akhir, grade);
     printf("\n== TERIMAKASIH TELAH MENGGUNAKAN PROGRAM KAMI! ==\n");
 
     return 0;
