@@ -40,9 +40,9 @@ int main (){
     if (pgblk >= 70) {
         nilai2 = 4;
     } else {
-        nilai2 = (float) 2 + ((20 * pgblk) / 7); 
+        nilai2 = (float) 2 + ((20 * pgblk) / 7) / 100; // bagi '100' agar memperbaiki nilai
         if (nilai2 < 2) {
-            nilai2 = 2;
+        nilai2 = 2;
         }
     }
     printf("Nilai jabatan akademik DTPS = %.2f\n", nilai2);
