@@ -6,6 +6,10 @@ int main (){
 
     printf("=== Sistem Penilaian Akreditasi Program Studi Magister/Magister Terapan ===\n");
 
+    // Khalis 51
+    // Fira 69
+    // Faiq 54
+
     // fungsi kecukupan jumlah DTPS
     int ndtps;
 
@@ -35,14 +39,14 @@ int main (){
     printf("Masukkan jumlah dosen tetap yang memiliki jabatan Lektor Kepala: ");
     scanf("%d", &ndlk);
 
-    pgblk = ((ndgb + ndlk) / ndtps) * 100;
+    pgblk = ((float)(ndgb + ndlk) / ndtps) * 100;
 
     if (pgblk >= 70) {
         nilai2 = 4;
     } else {
-        nilai2 = (float) 2 + ((20 * pgblk) / 7); 
+        nilai2 = (float) 2 + ((20 * pgblk) / 7) / 100; // bagi '100' agar memperbaiki nilai
         if (nilai2 < 2) {
-            nilai2 = 2;
+        nilai2 = 2;
         }
     }
     printf("Nilai jabatan akademik DTPS = %.2f\n", nilai2);
