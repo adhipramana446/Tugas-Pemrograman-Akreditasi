@@ -6,10 +6,6 @@ int main (){
 
     printf("=== Sistem Penilaian Akreditasi Program Studi Magister/Magister Terapan ===\n");
 
-    // Khalis 51
-    // Fira 69
-    // Faiq 54
-
     // fungsi kecukupan jumlah DTPS
     int ndtps;
 
