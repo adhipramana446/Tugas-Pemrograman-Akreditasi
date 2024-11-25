@@ -14,7 +14,7 @@ int main (){
     int ndtps;
 
     printf("\n-- Penilaian berdasarkan kecukupan jumlah dosen tetap (DTPS) --\n");
-    printf("Masukkan jumlah dosen tetap: ");
+    printf("Masukkan jumlah dosen tetap (tidak boleh 0): ");
     scanf("%d", &ndtps);
 
     if (ndtps >= 6) {
