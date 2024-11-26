@@ -2,7 +2,7 @@
 #include <string.h>
 
 int main (){
-    float nilai1, nilai2, nilai3, nilai4, nilai5, nilai6, nilai7;
+    float nilai1, nilai2, nilai3, nilai4, nilai5, nilai6;
 
     printf("=== Sistem Penilaian Akreditasi Program Studi Magister/Magister Terapan ===\n");
 
@@ -151,58 +151,11 @@ int main (){
     }
     printf("Nilai publikasi ilmiah = %.2f\n", nilai6);
 
-// Fungsi Publikasi Ilmiah Mahasiswa Magister Terapan
-    int naa1, naa2, naa3, naa4, nbb1, nbb2, nbb3, ncc1, ncc2, ncc3, nmm;
-    float rll, rnn, rii;
-
-    printf("\n--  Penilaian Berdasarkan Jumlah Publikasi Ilmiah Mahasiswa Magister Terapan --\n");
-    printf("Masukkan jumlah publikasi jurnal nasional tidak terakreditasi: ");
-    scanf("%d", &naa1);
-    printf("Masukkan jumlah publikasi jurnal nasional terakreditasi: ");
-    scanf("%d", &naa2);
-    printf("Masukkan jumlah publikasi jurnal internasional: ");
-    scanf("%d", &naa3);
-    printf("Masukkan jumlah publikasi jurnal internasional bereputasi: ");
-    scanf("%d", &naa4);
-    printf("Masukkan jumlah publikasi seminar wilayah/lokal/PT: ");
-    scanf("%d", &nbb1);
-    printf("Masukkan jumlah publikasi seminar nasional: ");
-    scanf("%d", &nbb2);
-    printf("Masukkan jumlah publikasi seminar internasional: ");
-    scanf("%d", &nbb3);
-    printf("Masukkan jumlah tulisan di media massa wilayah: ");
-    scanf("%d", &ncc1);
-    printf("Masukkan jumlah pagelaran/pameran/presentasi mahasiswa dalam forum tingkat wilayah: ");
-    scanf("%d", &ncc2);
-    printf("Masukkan jumlah pagelaran/pameran/presentasi mahasiswa dalam forum tingkat nasional: ");
-    scanf("%d", &ncc3);
-    printf("Masukkan jumlah mahasiswa pada saat TS: ");
-    scanf("%d", &nmm);
-
-    rll = ((float)(naa1 + nbb1 + ncc1) / nmm) * 100;
-    rnn = ((float)(naa2 + naa3 + nbb2 + ncc2) / nmm) * 100;
-    rii = ((float)(naa4 + nbb3 + ncc3) / nmm) * 100;
-
-    if (rii >= 2) {
-        nilai7 = 4;
-    } else if (rii < 2 && rnn >= 20) {
-        nilai7 = 3 + (rii / 2);
-    } else if (rii > 0 && rii < 2 && rnn > 0 && rnn < 20) {
-        nilai7 = 2 + (2 * (rii / 2)) + (rnn / 20) - ((rii * rnn) / (2 * 20));
-    } else if (rii == 0 && rnn ==  0 && rll >= 70) {
-        nilai7 = 2;
-    } else if (rii == 0 && rnn == 0 && rll < 70) {
-        nilai7 = (2 * rll) / 70;
-    } else {
-        nilai7 = 0;
-    }
-    printf("Nilai publikasi ilmiah = %.2f\n", nilai7);
-
     // fungsi akumulasi skor akhir dan grade
     float skor_akhir;
     char grade[30];
     
-    skor_akhir = (nilai1 + nilai2 + nilai3 + nilai4 + nilai5 + nilai6 + nilai7) / 7;
+    skor_akhir = (nilai1 + nilai2 + nilai3 + nilai4 + nilai5 + nilai6) / 6;
 
     if (skor_akhir >= 3.61){
         strcpy(grade, "Unggul");
@@ -216,13 +169,12 @@ int main (){
 
    // rangkuman output
     printf("\n\n== BERIKUT RANGKUMAN PENILAIAN AKREDITASI ==\n");
-    printf("\nNilai kecukupan jumlah DTPS = %.2f\n", nilai1);
-    printf("Nilai jabatan akademik DTPS = %.2f\n", nilai2);
-    printf("Nilai kurikulum = %.2f\n", nilai3);
+    printf("\nNilai Kecukupan Jumlah DTPS = %.2f\n", nilai1);
+    printf("Nilai Jabatan Akademik DTPS = %.2f\n", nilai2);
+    printf("Nilai Kurikulum = %.2f\n", nilai3);
     printf("Nilai PBS = %.2f\n", nilai4);
-    printf("Nilai kepuasan pengguna = %.2f\n", nilai5);
-    printf("Nilai publikasi ilmiah magister = %.2f\n", nilai6);
-    printf("Nilai publikasi ilmiah magister terapan = %.2f\n", nilai7);
+    printf("Nilai Kepuasan Pengguna = %.2f\n", nilai5);
+    printf("Nilai Publikasi Ilmiah Magister = %.2f\n", nilai6);
     printf("\nSkor Akhir = %.2f (%s)\n", skor_akhir, grade);
     printf("\n== TERIMAKASIH TELAH MENGGUNAKAN PROGRAM KAMI! ==\n");
 
